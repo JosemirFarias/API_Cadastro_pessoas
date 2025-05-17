@@ -1,5 +1,6 @@
 package Cadastro_pessoas.domain.pessoa;
 
+import Cadastro_pessoas.domain.pessoa.dto.PessoaDto;
 import jakarta.persistence.*;
 
 @Entity
@@ -19,6 +20,12 @@ public class Pessoa {
         this.id = id;
         this.nome = nome;
         this.email = email;
+    }
+
+    //Construtor de PessoaDto.
+    public Pessoa(PessoaDto pessoa) {
+        this.nome = pessoa.nome();
+        this.email = pessoa.email();
     }
 
     public Long getId() {
